@@ -12,12 +12,15 @@ services:
     image: custom-drupal 
     ports:
       - '80:80'
-  postgres:
-    image: postgres:14
+  mariadb:
+    image: mariadb:10.4
     environment:
-      - POSTGRES_PASSWORD=mypass88##
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_DATABASE=mariadb
+      - MARIADB_USER=mariadbuser
+      - MARIADB_PASSWORD=mariadbpassword
     volumes:
-      - drupal-data:/var/lib/postgresql/data
+      - drupal-data:/var/lib/mysql
 
 volumes:
   drupal-data:
