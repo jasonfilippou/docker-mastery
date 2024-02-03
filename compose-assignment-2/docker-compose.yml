@@ -6,7 +6,7 @@
 # uses sample HTML static site from https://startbootstrap.com/themes/agency/
 
 services:
-  proxy:
+  drupal:
     build:
       context: .
     image: custom-drupal 
@@ -24,3 +24,7 @@ services:
 
 volumes:
   drupal-data:
+  drupal-modules:
+  drupal-profiles:
+  drupal-sites:
+  drupal-themes:
